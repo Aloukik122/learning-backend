@@ -18,11 +18,17 @@ Task --
       note ko create krna, or multipal nots ko fetch krna, or note ko deleate krna.
 -----------------------------------------------------------------------------------------------
 
+
+---notes me do title or disception dena h to
+
 note = {
   title ="my first note",
   discreption = "this is my discreption"
 }
 
+const notes = []
+
+-- bahut sare title and discreption ko notes me send krna h jo ke ek object form me honge or ek arrey me store ho jayenge jinko hm excess kr sakte h
 
 const note = [
 
@@ -42,7 +48,7 @@ const note = [
 
               app.post('/notes',(req, res)=>{
 
-                console.log(req.body); // data kha a rha h 'body' m but vo JSON form me h or, server use nhi padh sakta h , so we need a middlewair like - express.jeson()  (line 52)
+                console.log(req.body);      ------------// data kha a rha h 'body' m but vo JSON form me h or, server use nhi padh sakta h , so we need a middlewair like - express.jeson()  (line 56)
 
                 notes.push --- > push krna h title an discreption or whatever data comes in body and send it to notes arrey
               })
@@ -59,7 +65,7 @@ app.post('/notes', (req, res) => {
 
   //sending message to the server that we got the data which was sent to us -- the server
   res.status(201).json({
-    // 201 is for not created
+    // 201 is for created
     message: 'note created successfully',
   });
 });
