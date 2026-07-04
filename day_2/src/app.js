@@ -59,6 +59,7 @@ app.post('/notes', (req, res) => {
 
   //sending message to the server that we got the data which was sent to us -- the server
   res.status(201).json({
+    // 201 is for not created
     message: 'note created successfully',
   });
 });
@@ -70,6 +71,7 @@ app.post('/notes', (req, res) => {
 app.get('/notes', (req, res) => {
   //when the server get 200 req then send the notes the data
   res.status(200).json({
+    // 200 for ok
     message: 'note created successfully',
     notes: notes, //------------------ notes ke andar jitne bhi notes h unhe send kre do
   });
