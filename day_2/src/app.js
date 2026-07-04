@@ -3,7 +3,7 @@
 
 const express = require('express');
 
-const app = express(); // server k instance create krna
+const app = express(); // server ka instance create krna
 
 /*
 _____________________________________________________________________________________________
