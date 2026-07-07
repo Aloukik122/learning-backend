@@ -25,11 +25,11 @@ app.get('/notes', (req, res) => {
 //------------notes/:index --- isme sirf index he change hoga ye server ko pta kaise chalega -----  (:) is sign se server ko pta chalta ha ke "index" dinamic h or vo change hoga
 
 app.delete('/notes/:index', (req, res) => {
-  /* req.params.index  -------- se pta chalega ki "index" me kya value ayegi */
+  /* req.params.index  -------- se pta chalega ki "index" me kya value ayegi eg. --> 4,3,12 */
 
   const index = req.params.index;
 
-  delete notes[index];
+  delete notes[index]; //----------> notes[3] - notes arry ke 3 number pr jo h use, delete kr do
 
   res.status(200).json({
     message: 'message deleted successfully',

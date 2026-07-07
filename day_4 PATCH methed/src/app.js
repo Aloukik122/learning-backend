@@ -44,6 +44,9 @@ app.patch('/notes/:index', (req, res) => {
 
         title option bhi add krna h kise krenge
 
+        const title = req.body.title;
+        notes[index].title = title;
+
 */
 
   res.status(200).json({
