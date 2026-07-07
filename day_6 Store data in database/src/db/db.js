@@ -11,7 +11,7 @@ module.exports = connectDB;
 
 /*
 
-----if upper code not working then find out what is wrong with it and use try and cath mathod
+-----if upper code not working then find out what is wrong with it and use try and cath mathod
 
 const mongoose = require('mongoose');
 
