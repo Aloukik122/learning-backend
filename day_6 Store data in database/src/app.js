@@ -59,6 +59,16 @@ app.post('/notes', async (req, res) => {
 });
 */
 
-app.get('/notes', (req, res) => {});
+//-------------------------------------------------------------------------------------------------
+
+// we use 'get' method for fetching the notes data we send priveously
+
+app.get('/notes', async (req, res) => {
+  const notes = await noteModel.find(); //------- jaise '.create' new things create krta h vaise hi '.find' method usi 'arr' ko find krke send krtha h
+  res.status(200).json({
+    message: 'Notes fetch successfully',
+    notes: notes,
+  });
+});
 
 module.exports = app;
