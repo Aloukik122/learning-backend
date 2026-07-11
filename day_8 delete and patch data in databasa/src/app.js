@@ -24,7 +24,6 @@ app.get('/notes', async (req, res) => {
     message: 'note fetch successfully',
     notes: notes,
   });
-  a;
 });
 
 //------------------------------------------------------------------------------------------
@@ -45,8 +44,12 @@ app.delete('/notes/:id', async (req, res) => {
 
 app.patch('/notes/:id', async (req, res) => {
   const id = req.params.id;
+  const title = req.body.title;
   const descreption = req.body.descreption;
-  await noteModel.findOneAndUpdate({ _id: id }, { descreption: descreption });
+  await noteModel.findOneAndUpdate(
+    { _id: id },
+    { descreption: descreption, title: title }
+  );
 
   res.status(200).json({
     message: 'Note has been updated',
