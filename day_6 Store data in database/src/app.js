@@ -1,6 +1,6 @@
 const express = require('express');
 
-const noteModel = require('./models/note.model'); // (.) dot k matlab ek piche folder the (/) k matlab uske andar "models" wala folder "/" uske ander "note.model" file
+const noteModel = require('./models/note.model'); // (..) dot k matlab ek piche folder the (/) k matlab uske andar "models" wala folder "/" uske ander "note.model" file
 
 const app = express();
 
