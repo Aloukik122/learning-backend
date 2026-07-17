@@ -6,6 +6,7 @@ async function connectDB() {
   await mongoose.connect(
     //---- mongoose mongodb ke database se connect krega
     'mongodb+srv://cluster0.31gweu8.mongodb.net/" --apiVersion 1 --username aloukikpatel_db_user'
+    'MongoDB Key Here'
   );
   console.log('connected to db');
 }

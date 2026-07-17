@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 async function connectDB() {
   await mongoose.connect(
     'mongodb+srv://aloukikpatel_db_user:Adgjmptwmd@cluster0.31gweu8.mongodb.net/?appName=Cluster0'
+    'MongoDB Key Here'
   );
   console.log('connected to db');
 }
@@ -20,6 +21,7 @@ async function connectDB() {
     // Replace with your actual full connection string and password
     await mongoose.connect(
       'mongodb+srv://aloukikpatel_db_user:Adgjmptwmd@cluster0.31gweu8.mongodb.net/?appName=Cluster0'
+      'MongoDB Key Here'
     );
     console.log('Successfully connected to MongoDB');
   } catch (error) {
@@ -44,6 +46,7 @@ async function connectDB() {
     // Ensure your connection string looks exactly like this format (with YOUR actual password)
     const connString =
       'mongodb+srv://aloukikpatel_db_user:Adgjmptwmd@cluster0.31gweu8.mongodb.net/?appName=Cluster0';
+      'MongoDB Key Here';
 
     console.log('Attempting to connect to MongoDB...');
     await mongoose.connect(connString);
