@@ -5,7 +5,6 @@ async function connectDB() {
   //---- " await " is lye lgate h ki - jb tk server database se connect na ho jaye tb tk "wait" kro isi lye "async" k be use hota h
   await mongoose.connect(
     //---- mongoose mongodb ke database se connect krega
-    'mongodb+srv://cluster0.31gweu8.mongodb.net/" --apiVersion 1 --username aloukikpatel_db_user'
     'MongoDB Key Here'
   );
   console.log('connected to db');
