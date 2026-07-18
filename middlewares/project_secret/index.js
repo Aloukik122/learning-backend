@@ -9,11 +9,13 @@ const app = express();
 const port = 3000;
 
 var userIsAuthorised = false;
-
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
 
 function passwordCheck(req, res, next) {
   const secret = req.body['secret'];
+
 
   //---- you can use it in POST method also
   if (secret === 'aaaa') {
@@ -28,13 +30,14 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-app.use(passwordCheck); // we use it here
+//app.use(passwordCheck); // we use it here
 
-app.post('/submit', (req, res) => {
+app.post('/submit', passwordCheck,  (req, res) => {  // ---but we use it here check what happen if we dident put it her. it give error because function is running before it  " get secret key data " so it will give undefined - because of empty data. Now it is running when we click on the submit button or when post req heppen
   // var secret = req.body['secret'];
 
   if (userIsAuthorised) {
     res.sendFile(__dirname + '/secret.html');
+    userIsAuthorised = false
   } else {
     res.redirect('/');
     // res.sendFile(__dirname + '/public/index.html');
